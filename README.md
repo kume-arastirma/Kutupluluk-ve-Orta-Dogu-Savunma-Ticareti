@@ -48,7 +48,7 @@ Pkg.add([
 Analizi yeniden üretmek için:
 
 ```bash
-julia script.jl
+julia Script.jl
 ```
 
 Betik tüm RDD tahminlerini çalıştırır, anlamlılık testlerini raporlar ve grafiklerin PDF çıktılarını üretir. Tüm yorum satırları Türkçedir ve her bölüm hangi bağımlı değişkene karşılık geldiğini açıkça belirtir.
