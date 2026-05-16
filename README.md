@@ -57,7 +57,7 @@ Betik tüm RDD tahminlerini çalıştırır, anlamlılık testlerini raporlar ve
 
 Her bağımlı değişken için aşağıdaki RDD spesifikasyonu tahmin edilmiştir:
 
-$$Y_i = \beta_0 + \beta_1 D_i + \beta_2 (\text{Yıl}_i - 1990) + \beta_3 \, D_i \times (\text{Yıl}_i - 1990) + \varepsilon_i$$
+$$Y_i = \beta_0 + \beta_1 D_i + \beta_2 (\text{Yıl}_i - 1990) + \beta_3 \ D_i  (\text{Yıl}_i - 1990) + \varepsilon_i$$
 
 Burada $D_i$ Soğuk Savaş sonrası kukla değişkenidir (yıl ≥ 1990 ise 1). $\beta_1$ eşik anındaki seviye sıçramasını, $\beta_3$ ise eğim kırılmasını yakalar. Standart hatalar Newey-West (Bartlett çekirdeği) HAC tahmincisi ile hesaplanmıştır. RDD tahminlerinin yanı sıra LOESS düzgünleştirme eğrileri (span parametreleri seriye göre 0.5–0.825 arasında) doğrusal-olmayan trendlerin görsel kontrolü için tahmin edilmiştir.
 
