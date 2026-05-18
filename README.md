@@ -10,7 +10,7 @@ Bu repo, Soğuk Savaş'ın sona ermesinin Ortadoğu silah tedarik örüntüleri 
 
 Analizde kullanılan ham veri seti, SIPRI Silah Transferleri Veritabanı'nın işlem-bazlı kayıt cetvelinden (trade register) elde edilmiştir. Veri, 1948–2023 dönemini kapsamakta ve `trade-register.csv` dosyası içinde sunulmaktadır. Veri kaynağı: [SIPRI Arms Transfers Database](https://www.sipri.org/databases/armstransfers). SIPRI veri kullanım koşulları için orijinal kaynağa başvurulmalıdır.
 
-Veride bazı idiosenkratik düzeltmeler yapılmıştır: 2024 yılı henüz tam kaydı içermediği için analiz dışında bırakılmış, ABD için 1952 öncesi (kayıt eksikliği) ve ülke başına ortalama tedarikçi sayısı için 2020 sonrası kapsam dışı tutulmuş, SIPRI'nin 2021 Rusya kaydındaki boşluk 0 olarak atanmıştır.
+Veride bazı düzeltmeler yapılmıştır: 2024 yılı henüz tam kaydı içermediği için analiz dışında bırakılmış, ABD için 1952 öncesi (kayıt eksikliği) ve ülke başına ortalama tedarikçi sayısı için 2020 sonrası kapsam dışı tutulmuş, SIPRI'nin 2021 Rusya kaydındaki boşluk 0 olarak atanmıştır.
 
 ## Repo Yapısı
 
