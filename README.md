@@ -1,6 +1,6 @@
 # Ortadoğu Silah Tedarik Örüntülerinin Yapısal Analizi: Soğuk Savaş Sonrası Dönüşümün Kesintili Regresyon Modeli ile İncelenmesi
 
-Bu repo, Soğuk Savaş'ın sona ermesinin Ortadoğu silah tedarik örüntüleri üzerindeki etkilerini SIPRI Silah Transferleri Veritabanı (Arms Transfers Database) verileri üzerinden inceleyen çalışmanın replikasyon paketini içermektedir. Analiz, 1990 yılını dışsal bir kırılma noktası olarak ele alan kesintili regresyon tasarımı (Regression Discontinuity Design, RDD) çerçevesinde yürütülmüş; bulgular Newey-West HAC standart hataları ile raporlanmıştır.
+Bu repo, Soğuk Savaş'ın sona ermesinin Ortadoğu silah tedarik örüntüleri üzerindeki etkilerini SIPRI Silah Transferleri Veritabanı (Arms Transfers Database) verileri üzerinden inceleyen çalışmanın replikasyon paketini içermektedir. Analiz, 1990 yılını dışsal bir kırılma noktası olarak ele alan kesintili regresyon (Regression Discontinuity, RD) modeli  çerçevesinde gerçekleştirilmiş; bulgular Newey-West HAC standart hataları ile raporlanmıştır.
 
 ## Sorunsal
 
@@ -8,7 +8,7 @@ Bu repo, Soğuk Savaş'ın sona ermesinin Ortadoğu silah tedarik örüntüleri 
 
 ## Veri
 
-Analizde kullanılan ham veri seti, SIPRI Silah Transferleri Veritabanı'nın işlem-bazlı kayıt cetvelinden (trade register) elde edilmiştir. Veri, 1948–2023 dönemini kapsamakta ve `trade-register.csv` dosyası içinde sunulmaktadır. Veri kaynağı: [SIPRI Arms Transfers Database](https://www.sipri.org/databases/armstransfers). SIPRI veri kullanım koşulları için orijinal kaynağa başvurulmalıdır.
+Analizde kullanılan ham veri seti, SIPRI Silah Transferleri Veritabanı'ndan elde edilmiştir. Veri, 1948–2023 dönemini kapsamakta ve `trade-register.csv` dosyası içinde sunulmaktadır. Veri kaynağı: [SIPRI Arms Transfers Database](https://www.sipri.org/databases/armstransfers). SIPRI veri kullanım koşulları için orijinal kaynağa başvurulmalıdır.
 
 Veride bazı düzeltmeler yapılmıştır: 2024 yılı henüz tam kaydı içermediği için analiz dışında bırakılmış, ABD için 1952 öncesi (kayıt eksikliği) ve ülke başına ortalama tedarikçi sayısı için 2020 sonrası kapsam dışı tutulmuş, SIPRI'nin 2021 Rusya kaydındaki boşluk 0 olarak atanmıştır.
 
@@ -32,7 +32,7 @@ Veride bazı düzeltmeler yapılmıştır: 2024 yılı henüz tam kaydı içerme
 
 ## Gereksinimler
 
-Analiz Julia (≥ 1.9) ortamında geliştirilmiştir. Gerekli paketler:
+Analiz Julia (≥ 1.9) programalama dilinde geliştirilmiştir. Gerekli paketler aşağıdaki gibidir:
 
 ```julia
 using Pkg
@@ -51,15 +51,15 @@ Analizi yeniden üretmek için:
 julia Script.jl
 ```
 
-Betik tüm RDD tahminlerini çalıştırır, anlamlılık testlerini raporlar ve grafiklerin PDF çıktılarını üretir. Tüm yorum satırları Türkçedir ve her bölüm hangi bağımlı değişkene karşılık geldiğini açıkça belirtir.
+Betik tüm RD hesaplamalarını yeniden üretir, anlamlılık testlerini raporlar ve grafiklerin PDF çıktılarını yaratır. Tüm yorum satırları Türkçedir ve her bölümün hangi bağımlı değişkene karşılık geldiği açıkça belirtilmiştir.
 
 ## Metodoloji
 
-Her bağımlı değişken için aşağıdaki RDD spesifikasyonu tahmin edilmiştir:
+Her bağımlı değişken için aşağıdaki RD spesifikasyonu hesaplanmıştır:
 
 $$Y_i = \beta_0 + \beta_1 D_i + \beta_2 (\text{Yıl}_i - 1990) + \beta_3 D_i (\text{Yıl}_i - 1990) + \varepsilon_i$$
 
-Burada $D_i$ Soğuk Savaş sonrası kukla (dummy) değişkenidir (yıl ≥ 1990 ise 1). $\beta_1$ eşik anındaki seviye sıçramasını, $\beta_3$ ise eğim kırılmasını yakalar. Standart hatalar Newey-West (Bartlett çekirdeği) HAC tahmincisi ile hesaplanmıştır. RDD tahminlerinin yanı sıra LOESS düzgünleştirme eğrileri (span parametreleri seriye göre 0.5–0.825 arasında) doğrusal-olmayan trendlerin görsel kontrolü için tahmin edilmiştir.
+Burada $D_i$ Soğuk Savaş sonrası kukla (dummy) değişkenidir (yıl ≥ 1990 ise 1). $\beta_1$ eşik anındaki seviye sıçramasını, $\beta_3$ ise eğim kırılmasını yakalar. Standart hatalar Newey-West (Bartlett çekirdeği) HAC metodu ile hesaplanmıştır. RD tahminlerinin yanı sıra LOESS düzgünleştirme eğrileri (span parametreleri seriye göre 0.5–0.825 arasında) doğrusal-olmayan trendlerin görsel kontrolü için hesaplanmıştır.
 
 ## Atıf
 
