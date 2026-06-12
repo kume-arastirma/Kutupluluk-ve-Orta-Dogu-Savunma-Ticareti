@@ -66,7 +66,7 @@ Burada $D_i$ Soğuk Savaş sonrası kukla (dummy) değişkenidir (yıl ≥ 1990 
 Bu repodaki kod ya da bulguları kullanmanız hâlinde aşağıdaki şekilde atıfta bulunmanız rica olunur:
 
 ```
-Güney, Ahmet Zahit, ve Abdullah Kabaoğlu. Kutupluluk ve Tedarik: Soğuk Savaş’tan Günümüze Ortadoğu Silah Ticaretinin Yapısal Dönüşümü. Kültür Medeniyet Vakfı, 2026. https://doi.org/10.5281/zenodo.20229063.
+Güney, Ahmet Zahit, ve Abdullah Kabaoğlu. Kutupluluk ve Tedarik: Soğuk Savaş’tan Günümüze Ortadoğu Savunma Ticaretinin Yapısal Dönüşümü. Kültür Medeniyet Vakfı, 2026. https://doi.org/10.5281/zenodo.20229063.
 
 Replikasyon paketi: https://github.com/kume-arastirma/Kutupluluk-ve-Ortado-u-Silah-Ticareti/
 ```
